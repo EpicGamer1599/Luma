@@ -1,0 +1,75 @@
+import type { Video } from './types';
+const samples = [
+  [
+    'aqz-KE-bpKQ',
+    'Big Buck Bunny',
+    'Blender Foundation',
+    'A little curiosity. A big adventure.',
+    'nature',
+    596,
+  ],
+  [
+    'eRsGyueVLvQ',
+    'Sintel — an open movie',
+    'Blender Foundation',
+    'A journey through a beautifully imagined world.',
+    'film',
+    888,
+  ],
+  [
+    'R6MlUcmOul8',
+    'Tears of Steel',
+    'Blender Foundation',
+    'Where live action meets imagination.',
+    'technology',
+    734,
+  ],
+  [
+    'YE7VzlLtp-4',
+    'Elephants Dream',
+    'Blender Foundation',
+    'Step into a world of impossible machines.',
+    'design',
+    654,
+  ],
+  ['jNQXAC9IVRw', 'Me at the zoo', 'jawed', 'A small moment in internet history.', 'nature', 19],
+  [
+    'M7lc1UVf-VE',
+    'YouTube IFrame API demonstration',
+    'YouTube Developers',
+    'Explore the official embedded player.',
+    'technology',
+    240,
+  ],
+  [
+    'aqz-KE-bpKQ',
+    'Big Buck Bunny',
+    'Blender Foundation',
+    'An open animation worth revisiting.',
+    'film',
+    596,
+  ],
+  [
+    'eRsGyueVLvQ',
+    'Sintel — an open movie',
+    'Blender Foundation',
+    'The art of building another world.',
+    'design',
+    888,
+  ],
+] as const;
+export const demoVideos: Video[] = samples
+  .slice(0, 6)
+  .map(([id, title, channel, description, topic, duration], i) => ({
+    id,
+    title,
+    channel,
+    channelId: 'demo-channel',
+    description: `${description}\n\nDEMO METADATA: This is a bundled sample, not a live YouTube API result. Dates and view counts are illustrative. Playback, when requested, uses the real official YouTube player and requires internet.`,
+    thumbnail: `/demo/${i}.svg`,
+    publishedAt: `2025-0${i + 1}-10T12:00:00Z`,
+    duration,
+    views: [12400000, 8700000, 3200000, 4100000, 340000000, 980000][i],
+    tags: [topic, 'creative commons', 'demo'],
+    demo: true,
+  }));

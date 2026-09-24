@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist-electron/
+release/
+.env
+.env.*
+!.env.example
+*.db
+*.db.*
+*.sqlite*
+test-results/
+playwright-report/
+.test-data/
+*.log
+.DS_Store
+Thumbs.db
